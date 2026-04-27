@@ -1,4 +1,8 @@
-import roll, name_list
+from team_name import Team
 
-def get_team():
-    roll.get_random_roll(1, 100, 
+# Instantiate team
+team1 = Team()
+# Get team type
+team1.team_type()
+team1.team_choices()
+print(team1.fullname)
