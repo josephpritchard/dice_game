@@ -32,7 +32,7 @@ class Team:
     def team_choices(self):
         # Sub-method to generate random team names
         def random_team(ln):
-            cls
+            # cls
             # Create/clear list
             team_choices = []
             # Create lists of first and last names
@@ -62,20 +62,22 @@ class Team:
                 elif t_input == 6:
                     print("You chose to regenerate team names")
                     input("Press 'Enter' to continue...")
-                    random_team(ln_list)
+                    run_submethods()
                 else:
                     print("Invalid input. Try again...")
                     rt_input(tc_list, tc_first, tc_last)
             except Exception as e:
                 print(f"Error is {e}. Try again..."); rt_input(tc_list, tc_first, tc_last)
+                
+        def run_submethods():
+            # Call sub-methods
+            rt_list_var = random_team(ln_list)
+            rt_input_var = rt_input(rt_list_var[0], rt_list_var[1], rt_list_var[2])
 
         # Adjust type string to match list names
         attr = self.type.lower()
         ln_list = getattr(l, attr)
-        # Call sub-methods
-        rt_list_var = random_team(ln_list)
-        rt_input_var = rt_input(rt_list_var[0], rt_list_var[1], rt_list_var[2])
-
+        run_submethods()
 
 '''
 team1 = Team()
