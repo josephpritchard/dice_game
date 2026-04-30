@@ -2,11 +2,12 @@ import random
 import name_lists as l
 
 class Team:
-    def __init__(self):
+    def __init__(self, is_player):
         self.firstname = None
         self.lastname = None
         self.fullname = None
         self.type = None
+        self.is_player = is_player
         self.score = None
         self.wins = None
         self.losses = None
@@ -32,7 +33,7 @@ class Team:
     def team_choices(self):
         # Sub-method to generate random team names
         def random_team(ln):
-            # cls
+            # clear
             # Create/clear list
             team_choices = []
             # Create lists of first and last names
@@ -56,32 +57,59 @@ class Team:
                 t_input = int(input())
                 # If statement to handle input
                 if t_input in range(1, 6):
+                    # -1 adjustment to match with list numbering
                     self.fullname = tc_list[t_input-1]
                     self.firstname = tc_first[t_input-1]
                     self.lastname = tc_last[t_input-1]
                 elif t_input == 6:
                     print("You chose to regenerate team names")
                     input("Press 'Enter' to continue...")
-                    run_submethods()
+                    run_tc_subs()
+                elif t_input == 18:
+                    print("You found the secret code!")
+                    print("Enter team first city or state")
+                    print("Do not write 'the' at the beginning (Example: Kanasas City)")
+                    self.firstname = input()
+                    print("Enter team name (Example: Chiefs)")
+                    self.lastname = input()
+                    self.fullname = f"The {self.firstname} {self.lastname}"
+                    print(f"Your custom team is... {self.fullname}")
                 else:
                     print("Invalid input. Try again...")
                     rt_input(tc_list, tc_first, tc_last)
             except Exception as e:
                 print(f"Error is {e}. Try again..."); rt_input(tc_list, tc_first, tc_last)
                 
-        def run_submethods():
+        def run_tc_subs():
             # Call sub-methods
             rt_list_var = random_team(ln_list)
             rt_input_var = rt_input(rt_list_var[0], rt_list_var[1], rt_list_var[2])
 
         # Adjust type string to match list names
         attr = self.type.lower()
+        # I'm not sure... something with making the list an attribute?
         ln_list = getattr(l, attr)
-        run_submethods()
+        # Call method to run submethods
+        # If statement for player vs. opponent variation
+        if self.is_player == True:
+            run_tc_subs()
+        elif self.is_player == False:
+            rt_list_var = random_team(ln_list)
+            self.firstname = rt_list_var[1][0]
+            self.lastname = rt_list_var[2][0]
+            self.fullname = f"The {self.firstname} {self.lastname}"
+        else:
+            print("Error. is_player value is invalid.")
 
-'''
-team1 = Team()
-team1.team_type()
-team1.team_choices()
-print(f"You chose: {team1.fullname}")
-'''
+    # Method for populating opponent team type and name
+    def get_opponent_team(self, player_team_type):
+        match player_team_type:
+            case "Animal":
+                self.type = random.choice(("Flower", "Insect"))
+            case "Flower":
+                self.type = random.choice(("Animal", "Insect"))
+            case "Insect":
+                self.type = random.choice(("Animal", "Flower"))
+            case _:
+                print("Error. Player team type not set.")
+

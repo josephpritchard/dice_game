@@ -23,18 +23,18 @@ city = [
     "Richmond", "Olympia", "Charleston", "Madison", "Cheyenne"
 ]
 flower = [
-    "Camellias", "Forget-me-nots", "Saguaro Cactus Blossoms", "Apple Blossoms", 
+    "Camellias", "Forget-me-nots", "Cactus Blossoms", "Apple Blossoms", 
     "Golden Poppies", "Arrowheads", "White Lilacs", "Peach Blossoms", 
     "Orange Blossoms", "Yellow Jasmines", "Hibiscuses", "Sagebrushs", 
-    "Wild Prairie Roses", "Peonies", "Wild Roses", "Sunflowers", 
+    "Prairie Roses", "Peonies", "Wild Roses", "Sunflowers", 
     "Goldenrods", "Magnolias", "Pine Cones", "Black-Eyed Susans", 
-    "Mayflowers", "Apple Blossoms", "Slippers", "Magnolias", 
-    "White Hawthorn Blossoms", "Bitterroots", "Sunflowers", "Sagebrush", 
+    "Mayflowers", "Orange Blossoms", "Slippers", "Magnolias", 
+    "Hawthorn Blossoms", "Bitterroots", "Sunflowers", "Sagebrush", 
     "Purple Lilacs", "Blue Hens", "Yucca Flowers", "Roses", 
     "Red Carnations", "Wild Lupines", "Scarlet Carnations", 
-    "Rosalinas", "Oregon Grapes", "Mountain Laurels", "Violets", 
+    "Rosalinas", "Grapes", "Mountain Laurels", "Violets", 
     "Yellow Jessamines", "Pasque Flowers", "Irises", "Bluebonnets", 
-    "Sego Lilies", "Red Clovers", "Mountain Laurels", "Tulips", 
+    "Sego Lilies", "Red Clovers", "Laurels", "Tulips", 
     "Rhododendrons", "White Trilliums", "Sunflower"
 ]
 animal = [
