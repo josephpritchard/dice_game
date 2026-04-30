@@ -1,5 +1,5 @@
 import os
-from team_name import Team
+from team import Team
 
 # Function to clear screen
 def clear_screen():
